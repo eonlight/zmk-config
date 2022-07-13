@@ -1,0 +1,24 @@
+if SHIELD_RERGO_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "rergo"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_RERGO_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "rergo_right"
+
+
+endif
+
+if SHIELD_RERGO_LEFT || SHIELD_RERGO_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
