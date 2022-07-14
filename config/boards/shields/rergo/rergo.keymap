@@ -1,13 +1,6 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
 
 &mt {
     flavor = "tap-preferred";
@@ -17,47 +10,33 @@
 / {
 
     combos {
+
         compatible = "zmk,combos";
+
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
 
-         combo_tab {
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_tab {
             timeout-ms = <50>;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
 
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-
-                    combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-
-
-           combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-
-
-
     };
+
+    //    0    1    2    3    4                 5    6    7    8    9
+    //   10   11   12   13   14                15   16   17   18   19
+    //   20   21   22   23   24                25   26   27   28   29
+    //                       30    31    32    33
 
         keymap {
                 compatible = "zmk,keymap";
@@ -85,16 +64,7 @@
         &kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT             &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
         &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN           &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
         &kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH             &kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-                      &mo 3 &kp LCTL                &kp SPC  &mo 2
-        >;
-        };
-
-        tri_layer {
-        bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5             &trans &trans   &trans   &trans  &trans
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                          &trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans
-        &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7                 &trans &kp PG_DN  &kp K_VOL_DN  &trans &trans
-                     &trans &trans                      &trans &trans
+                      &mo 1 &kp LCTL                &kp SPC  &mo 2
         >;
         };
 
