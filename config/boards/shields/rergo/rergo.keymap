@@ -88,7 +88,7 @@
 
         left_layer {
         bindings = <
-            &kp ESCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP     &kp LC(A)       &kp UP   &kp LC(E) &kp UNDER
+            &kp EXCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP     &kp LC(A)       &kp UP   &kp LC(E) &kp UNDER
             &hm LSFT TILDE &hm LALT DLLR &hm LCTL LPAR &hm LGUI RPAR &kp HASH      &kp PG_DN     &kp LEFT        &kp DOWN &kp RIGHT &hm RSFT DQT
             &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LGUI(SPC) &kp EQUAL       &trans   &trans    &kp PRCNT
                                                        &to BASEL     &trans        &kp DEL       &os NAVEL NAVEL
