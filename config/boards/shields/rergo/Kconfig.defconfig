@@ -13,7 +13,6 @@ if SHIELD_RERGO_RIGHT
 config ZMK_KEYBOARD_NAME
     default "rergo_right"
 
-
 endif
 
 if SHIELD_RERGO_LEFT || SHIELD_RERGO_RIGHT

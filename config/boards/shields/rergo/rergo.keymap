@@ -7,10 +7,6 @@
     tapping_term_ms = <200>;
 };
 
-#define BASEL 0
-#define LEFTL 1
-#define RGHTL 2
-
 / {
 
     combos {
@@ -40,12 +36,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
+        default_layer {
         bindings = <
             &kp Q      &kp W      &kp F      &kp P      &kp B        &kp J   &kp L         &kp U      &kp Y      &kp SEMI
             &mt LSFT A &mt LALT R &mt LCTL S &mt LGUI T &kp G        &kp K   &mt RGUI N    &mt RCTL E &mt RALT I &mt RSFT O
             &kp Z      &kp X      &kp C      &kp D      &kp V        &kp M   &kp H         &kp CMMA   &kp DOT    &kp FSLH
-                                             &mo LEFTL  &kp SPC      &kp RET &mo RGHTL
+                                             &mo 1  &kp SPC      &kp RET &mo 2
         >;
         };
 
@@ -54,16 +50,16 @@
             &kp EXCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP     &kp LC(A)       &kp UP   &kp LC(E) &kp UNDER
             &mt LSFT TILDE &mt LALT DLLR &mt LCTL LPAR &mt LGUI RPAR &kp HASH      &kp PG_DN     &kp LEFT        &kp DOWN &kp RIGHT &mt RSFT DQT
             &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LGUI(SPC) &kp EQUAL       &trans   &trans    &kp PRCNT
-                                                       &to BASEL     &trans        &kp DEL       &trans
+                                                       &to 0     &trans        &kp DEL       &trans
         >;
         };
 
-        rght_layer {
+        right_layer {
         bindings = <
-            &kp NUM_1 &kp NUM_2 &kp NUM_3   &kp NUM_4   &kp NUM_5     &kp NUM_6 &kp NUM_7       &kp NUM_8     &kp NUM_9     &kp NUM_0
+            &kp N1 &kp N2 &kp N3   &kp N4   &kp N5     &kp N6 &kp N7       &kp N8     &kp N9     &kp N0
             &kp TAB   &kp LALT  &mt LCTL LT &mt LGUI GT &trans        &kp QMARK &mt RGUI SQT    &mt RCTL PIPE &mt RALT AMPS &mt RSFT MINUS
             &trans    &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS        &trans        &trans        &kp BSLH
-                                            &to BASEL   &kp BSPC      &kp ESC   &trans
+                                            &to 0   &kp BSPC      &kp ESC   &trans
         >;
         };
 
