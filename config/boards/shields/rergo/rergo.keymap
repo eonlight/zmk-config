@@ -61,10 +61,10 @@
 
         right_layer {
         bindings = <
-            &kp N1    &kp N2    &kp N3      &kp N4      &kp N5        &kp N6    &kp N7       &kp N8        &kp N9        &kp N0
-            &kp TAB   &kp LALT  &mt LCTL LT &mt LGUI GT &trans        &kp QMARK &mt RGUI SQT &mt RCTL PIPE &mt RALT AMPS &mt RSFT MINUS
-            &trans    &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS     &trans        &trans        &kp BSLH
-                                            &to 0       &kp BSPC      &kp ESC   &trans
+            &kp N1      &kp N2    &kp N3      &kp N4      &kp N5        &kp N6    &kp N7       &kp N8        &kp N9        &kp N0
+            &kp TAB     &kp LALT  &mt LCTL LT &mt LGUI GT &trans        &kp QMARK &mt RGUI SQT &mt RCTL PIPE &mt RALT AMPS &mt RSFT MINUS
+            &kp C_RESET &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS     &trans        &trans        &kp BSLH
+                                              &to 0       &kp BSPC      &kp ESC   &trans
         >;
         };
 
