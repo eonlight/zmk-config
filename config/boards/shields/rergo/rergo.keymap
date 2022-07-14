@@ -7,30 +7,29 @@
     tapping_term_ms = <200>;
 };
 
+#define BASEL 0
+#define LEFTL 1
+#define RGHTL 2
 
 / {
 
     combos {
         compatible = "zmk,combos";
-
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-
         combo_bspc {
             timeout-ms = <50>;
             key-positions = <8 9>;
             bindings = <&kp BSPC>;
         };
-
         combo_tab {
             timeout-ms = <50>;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
         };
-
     };
 
     //    0    1    2    3    4                 5    6    7    8    9
