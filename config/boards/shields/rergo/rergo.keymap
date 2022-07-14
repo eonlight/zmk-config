@@ -3,10 +3,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 
-#define BASE 0
-#define LEFT 1
-#define RGHT 2
-#define NAVE 3
+#define BASEL 0
+#define LEFTL 1
+#define RGHTL 2
+#define NAVEL 3
 
 &mt {
     flavor = "tap-preferred";
@@ -79,28 +79,28 @@
 
         base_layer {
         bindings = <
-            &kp Q      &kp W      &kp F      &kp P         &kp B        &kp J   &kp L         &kp U      &kp Y      &kp SEMI
-            &hm LSFT A &hm LALT R &hm LCTL S &hm LGUI T    &kp G        &kp K   &hm RGUI N    &hm RCTL E &hm RALT I &hm RSFT O
-            &kp Z      &kp X      &kp C      &kp D         &kp V        &kp M   &kp H         &kp CMMA   &kp DOT    &kp FSLH
-                                             &os LEFT LEFT &kp SPC      &kp RET &mo RGHT
+            &kp Q      &kp W      &kp F      &kp P           &kp B        &kp J   &kp L         &kp U      &kp Y      &kp SEMI
+            &hm LSFT A &hm LALT R &hm LCTL S &hm LGUI T      &kp G        &kp K   &hm RGUI N    &hm RCTL E &hm RALT I &hm RSFT O
+            &kp Z      &kp X      &kp C      &kp D           &kp V        &kp M   &kp H         &kp CMMA   &kp DOT    &kp FSLH
+                                             &os LEFTL LEFTL &kp SPC      &kp RET &mo RGHTL
         >;
         };
 
         left_layer {
         bindings = <
-            &kp ESCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP     &kp LC(A)     &kp UP   &kp LC(E) &kp UNDER
-            &hm LSFT TILDE &hm LALT DLLR &hm LCTL LPAR &hm LGUI RPAR &kp HASH      &kp PG_DN     &kp LEFT      &kp DOWN &kp RIGHT &hm RSFT DQT
-            &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LGUI(SPC) &kp EQUAL     &trans   &trans    &kp PRCNT
-                                                       &to BASE      &trans        &kp DEL       &os NAVE NAVE
+            &kp ESCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP     &kp LC(A)       &kp UP   &kp LC(E) &kp UNDER
+            &hm LSFT TILDE &hm LALT DLLR &hm LCTL LPAR &hm LGUI RPAR &kp HASH      &kp PG_DN     &kp LEFT        &kp DOWN &kp RIGHT &hm RSFT DQT
+            &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LGUI(SPC) &kp EQUAL       &trans   &trans    &kp PRCNT
+                                                       &to BASEL     &trans        &kp DEL       &os NAVEL NAVEL
         >;
         };
 
         rght_layer {
         bindings = <
-            &kp NUM_1 &kp NUM_2 &kp NUM_3   &kp NUM_4   &kp NUM_5     &kp NUM_6 &kp NUM_7     &kp NUM_8     &kp NUM_9     &kp NUM_0
-            &kp TAB   &kp LALT  &hm LCTL LT &hm LGUI GT &trans        &kp QMARK &hm RGUI SQT  &hm RCTL PIPE &hm RALT AMPS &hm RSFT MINUS
-            &trans    &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS      &trans        &trans        &kp BSLH
-                                            &to BASE    &kp BSPC      &kp ESC   &os NAVE NAVE
+            &kp NUM_1 &kp NUM_2 &kp NUM_3   &kp NUM_4   &kp NUM_5     &kp NUM_6 &kp NUM_7       &kp NUM_8     &kp NUM_9     &kp NUM_0
+            &kp TAB   &kp LALT  &hm LCTL LT &hm LGUI GT &trans        &kp QMARK &hm RGUI SQT    &hm RCTL PIPE &hm RALT AMPS &hm RSFT MINUS
+            &trans    &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS        &trans        &trans        &kp BSLH
+                                            &to BASEL   &kp BSPC      &kp ESC   &os NAVEL NAVEL
         };
 
         nave_layer {
