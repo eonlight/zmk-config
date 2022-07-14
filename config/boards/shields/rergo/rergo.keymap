@@ -38,19 +38,20 @@
     //   20   21   22   23   24                25   26   27   28   29
     //                       30    31    32    33
 
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-            default_layer {
+        default_layer {
         bindings = <
-        &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U  &kp I    &kp O   &kp P
-        &kp A &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp QUOT
-        &mt LSFT Z &kp X &kp C &kp V &kp B                      &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-                        &mo 1 &kp LCTL                  &kp SPC &mo 2
+            &kp Q      &kp W      &kp F      &kp P      &kp B        &kp J   &kp L         &kp U      &kp Y      &kp SEMI
+
+            &kp A &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp QUOT
+            &kp Z      &kp X      &kp C      &kp D      &kp V        &kp M   &kp H         &kp CMMA   &kp DOT    &kp FSLH
+                                             &mo 1      &kp SPC      &kp RET &mo 2
         >;
         };
 
-            left_layer {
+        left_layer {
         bindings = <
         &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5     &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0
         &kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH         &kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL
