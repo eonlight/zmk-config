@@ -101,6 +101,7 @@
             &kp TAB   &kp LALT  &hm LCTL LT &hm LGUI GT &trans        &kp QMARK &hm RGUI SQT    &hm RCTL PIPE &hm RALT AMPS &hm RSFT MINUS
             &trans    &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS        &trans        &trans        &kp BSLH
                                             &to BASEL   &kp BSPC      &kp ESC   &os NAVEL NAVEL
+        >;
         };
 
         nave_layer {
