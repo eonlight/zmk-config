@@ -10,8 +10,8 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-mouse-hack
-       remote: ftc-fork
-       revision: mouse-ftc
-       import: app/west.yml
+      remote: ftc-fork
+      revision: mouse-ftc
+      import: app/west.yml
   self:
     path: config
