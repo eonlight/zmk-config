@@ -15,10 +15,10 @@
 #define NLYR 3
 
 // mouse movement
-#define MMUP MOVE_VERT(-2500)
-#define MMDN MOVE_VERT(2500)
-#define MMLT MOVE_HOR(-2500)
-#define MMRT MOVE_HOR(2500)
+#define MMUP MOVE_VERT(-2300)
+#define MMDN MOVE_VERT(2300)
+#define MMLT MOVE_HOR(-2300)
+#define MMRT MOVE_HOR(2300)
 
 // scroll movement
 #define SMUP SCROLL_VERT(25)
@@ -99,7 +99,7 @@
         navigation_layer {
         bindings = <
             &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans       &trans &trans   &trans   &trans   &trans
-            &mkp LCLK &mmv MMLT &mmv MMUP &mmv MMRT &trans       &trans &kp RGUI &kp RCTL &kp RALT &kp RSFT
+            &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans       &trans &kp RGUI &kp RCTL &kp RALT &kp RSFT
             &trans    &trans    &trans    &trans    &trans       &trans &trans   &trans   &trans   &trans
                                           &to BLYR  &mkp RCLK    &trans &trans
         >;
