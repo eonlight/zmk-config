@@ -8,20 +8,22 @@
     tapping_term_ms = <200>;
 };
 
-&mmv {
-    time-to-max-speed-ms = <200>;
-    acceleration-exponent=<1>;
-};
-
-&mwh {
-    time-to-max-speed-ms = <200>;
-    acceleration-exponent=<1>;
-};
-
+// layers
 #define BLYR 0
 #define LLYR 1
 #define RLYR 2
 #define NLYR 3
+
+// mouse movement
+#define MMUP MOVE_VERT(-2500)
+#define MMDN MOVE_VERT(2500)
+#define MMLT MOVE_HOR(-2500)
+#define MMRT MOVE_HOR(2500)
+
+// scroll movement
+#define SMUP SCROLL_VERT(25)
+#define SMDN SCROLL_VERT(-25)
+
 
 / {
 
@@ -96,10 +98,10 @@
 
         navigation_layer {
         bindings = <
-            &trans    &mwh SCROLL_DOWN &mmv MOVE_UP   &mwh SCROLL_UP  &trans       &trans &trans   &trans   &trans   &trans
-            &mkp LCLK &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans       &trans &kp RGUI &kp RCTL &kp RALT &kp RSFT
-            &trans    &trans           &trans         &trans          &trans       &trans &trans   &trans   &trans   &trans
-                                                      &to BLYR        &mkp RCLK    &trans &trans
+            &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans       &trans &trans   &trans   &trans   &trans
+            &mkp LCLK &mmv MMLT &mmv MMUP &mmv MMRT &trans       &trans &kp RGUI &kp RCTL &kp RALT &kp RSFT
+            &trans    &trans    &trans    &trans    &trans       &trans &trans   &trans   &trans   &trans
+                                          &to BLYR  &mkp RCLK    &trans &trans
         >;
         };
 
