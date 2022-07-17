@@ -55,7 +55,7 @@
             label = "MO_LAYERS_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to NLYR>;
+            bindings = <&mo LLYR>, <&to NLYR>, <&none>;
         };
     };
 
