@@ -1,0 +1,126 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
+// layers
+#define BLYR 0
+#define LLYR 1
+#define RLYR 2
+#define NLYR 3
+
+// mouse movement
+#define MMUP MOVE_VERT(-2200)
+#define MMDN MOVE_VERT(2200)
+#define MMLT MOVE_HOR(-2200)
+#define MMRT MOVE_HOR(2200)
+
+// scroll movement
+#define SMUP SCROLL_VERT(25)
+#define SMDN SCROLL_VERT(-25)
+
+/ {
+
+    combos {
+
+        compatible = "zmk,combos";
+
+        combo_left_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_right_bspc {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_left_bspc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_left_tab {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_left_del {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_left_ent {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp RET>;
+        };
+
+    };
+
+    behaviors {
+        tdl: tap_dance_layer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MO_LAYERS_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo LLYR>, <&to NLYR>;
+        };
+    };
+
+    //    0    1    2    3    4                 5    6    7    8    9
+    //   10   11   12   13   14                15   16   17   18   19
+    //   20   21   22   23   24                25   26   27   28   29
+    //                       30    31    32    33
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+        bindings = <
+            &kp Q      &kp W      &kp F      &kp P      &kp B        &kp J   &kp L      &kp U      &kp Y      &kp SEMI
+            &mt LSFT A &mt LALT R &mt LCTL S &mt LGUI T &kp G        &kp K   &mt RGUI N &mt RCTL E &mt RALT I &mt RSFT O
+            &kp Z      &kp X      &kp C      &kp D      &kp V        &kp M   &kp H      &kp CMMA   &kp DOT    &kp FSLH
+                                             &tdl       &kp SPC      &kp RET &mo RLYR
+        >;
+        };
+
+        left_layer {
+        bindings = <
+            &kp EXCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP   &kp LC(A) &kp UP   &kp LC(E) &kp UNDER
+            &mt LSFT TILDE &mt LALT DLLR &mt LCTL LPAR &mt LGUI RPAR &kp HASH      &kp PG_DN   &kp LEFT  &kp DOWN &kp RIGHT &mt RSFT DQT
+            &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LG(SPC) &kp EQUAL &trans   &trans    &kp PRCNT
+                                                       &to BLYR      &bootloader   &kp DEL     &trans
+        >;
+        };
+
+        right_layer {
+        bindings = <
+            &kp N1      &kp N2    &kp N3      &kp N4      &kp N5        &kp N6    &kp N7       &kp N8        &kp N9        &kp N0
+            &kp TAB     &kp LALT  &mt LCTL LT &mt LGUI GT &trans        &kp QMARK &mt RGUI SQT &mt RCTL PIPE &mt RALT AMPS &mt RSFT MINUS
+            &trans      &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS     &trans        &trans        &kp BSLH
+                                              &to BLYR    &kp BSPC      &kp ESC   &trans
+        >;
+        };
+
+        navigation_layer {
+        bindings = <
+            &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans       &kp C_PP &kp C_VOL_UP &kp C_VOL_DN &kp C_PREV &kp C_NEXT
+            &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans       &trans   &kp RGUI     &kp RCTL     &kp RALT   &kp RSFT
+            &trans    &trans    &trans    &trans    &trans       &trans   &kp C_BRI_UP &kp C_BRI_DN &trans     &trans
+                                          &to BLYR  &mkp RCLK    &trans   &trans
+        >;
+        };
+
+    };
+};
