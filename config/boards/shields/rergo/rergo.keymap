@@ -15,15 +15,14 @@
 #define NLYR 3
 
 // mouse movement
-#define MMUP MOVE_VERT(-2300)
-#define MMDN MOVE_VERT(2300)
-#define MMLT MOVE_HOR(-2300)
-#define MMRT MOVE_HOR(2300)
+#define MMUP MOVE_VERT(-2200)
+#define MMDN MOVE_VERT(2200)
+#define MMLT MOVE_HOR(-2200)
+#define MMRT MOVE_HOR(2200)
 
 // scroll movement
 #define SMUP SCROLL_VERT(25)
 #define SMDN SCROLL_VERT(-25)
-
 
 / {
 
@@ -31,22 +30,40 @@
 
         compatible = "zmk,combos";
 
-        combo_esc {
+        combo_left_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
 
-        combo_bspc {
+        combo_right_bspc {
             timeout-ms = <50>;
             key-positions = <18 19>;
             bindings = <&kp BSPC>;
         };
 
-        combo_tab {
+        combo_left_bspc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_left_tab {
             timeout-ms = <50>;
             key-positions = <10 11>;
             bindings = <&kp TAB>;
+        };
+
+        combo_left_del {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_left_ent {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp RET>;
         };
 
     };
@@ -98,10 +115,10 @@
 
         navigation_layer {
         bindings = <
-            &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans       &trans &trans   &trans   &trans   &trans
-            &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans       &trans &kp RGUI &kp RCTL &kp RALT &kp RSFT
-            &trans    &trans    &trans    &trans    &trans       &trans &trans   &trans   &trans   &trans
-                                          &to BLYR  &mkp RCLK    &trans &trans
+            &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans       &kp C_PP &kp C_VOL_UP &kp C_VOL_DN &kp C_PREV &kp C_NEXT
+            &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans       &trans   &kp RGUI     &kp RCTL     &kp RALT   &kp RSFT
+            &trans    &trans    &trans    &trans    &trans       &trans   &kp C_BRI_UP &kp C_BRI_DN &trans     &trans
+                                          &to BLYR  &mkp RCLK    &trans   &trans
         >;
         };
 
