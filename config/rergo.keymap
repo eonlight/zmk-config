@@ -57,7 +57,7 @@
         combo_left_del {
             timeout-ms = <50>;
             key-positions = <23 24>;
-            bindings = <&kp BSPC>;
+            bindings = <&kp DEL>;
         };
 
         combo_left_ent {
@@ -90,7 +90,7 @@
         bindings = <
             &kp Q      &kp W      &kp F      &kp P      &kp B        &kp J   &kp L      &kp U      &kp Y      &kp SEMI
             &mt LSFT A &mt LALT R &mt LCTL S &mt LGUI T &kp G        &kp K   &mt RGUI N &mt RCTL E &mt RALT I &mt RSFT O
-            &kp Z      &kp X      &kp C      &kp D      &kp V        &kp M   &kp H      &kp CMMA   &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &kp D      &kp V        &kp M   &kp H      &kp COMMA  &kp DOT    &kp FSLH
                                              &tdl       &kp SPC      &kp RET &mo RLYR
         >;
         };
