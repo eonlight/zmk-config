@@ -35,15 +35,9 @@
             bindings = <&kp ESC>;
         };
 
-        combo_right_bspc {
-            timeout-ms = <50>;
-            key-positions = <18 19>;
-            bindings = <&kp BSPC>;
-        };
-
         combo_left_bspc {
             timeout-ms = <50>;
-            key-positions = <3 4>;
+            key-positions = <23 24>;
             bindings = <&kp BSPC>;
         };
 
@@ -55,7 +49,7 @@
 
         combo_left_del {
             timeout-ms = <50>;
-            key-positions = <23 24>;
+            key-positions = <3 4>;
             bindings = <&kp DEL>;
         };
 
@@ -64,6 +58,22 @@
             key-positions = <13 14>;
             bindings = <&kp RET>;
         };
+
+
+        // right side combos
+
+        combo_right_bspc {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp BSPC>;
+        };
+
+        combo_right_del {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp DEL>;
+        };
+
     };
 
     behaviors {
@@ -86,46 +96,46 @@
 
         default_layer {
             bindings = <
-       &kp Q       &kp W        &kp F       &kp P      &kp B    &kp J       &kp L        &kp U       &kp Y     &kp SEMI
- &mt LSHFT A  &mt LALT R  &mt LCTRL S  &mt LGUI T      &kp G    &kp K  &mt RGUI N  &mt RCTRL E  &mt RALT I  &mt RSHFT O
-       &kp Z       &kp X        &kp C       &kp D      &kp V    &kp M       &kp H    &kp COMMA     &kp DOT     &kp FSLH
-                                             &tdl  &kp SPACE  &kp RET       &mo 2
+ &kp Q       &kp W       &kp F       &kp P      &kp B                      &kp J    &kp L      &kp U       &kp Y      &kp SEMI
+ &mt LSHFT A &mt LALT R  &mt LCTRL S &mt LGUI T &kp G                      &kp K    &mt RGUI N &mt RCTRL E &mt RALT I &mt RSHFT O
+ &kp Z       &kp X       &kp C       &kp D      &kp V                      &kp M    &kp H      &kp COMMA   &kp DOT    &kp FSLH
+                                                &tdl  &kp SPACE    &kp RET &mo RLYR
             >;
         };
 
         left_layer {
             bindings = <
-        &kp EXCL         &kp AT        &kp LBKT       &kp RBKT    &kp CARET      &kp PG_UP  &kp LC(A)    &kp UP  &kp LC(E)      &kp UNDER
- &mt LSHFT TILDE  &mt LALT DLLR  &mt LCTRL LPAR  &mt LGUI RPAR     &kp HASH      &kp PG_DN   &kp LEFT  &kp DOWN  &kp RIGHT  &mt RSHFT DQT
-          &trans         &trans        &kp LBRC       &kp RBRC     &kp STAR  &kp LG(SPACE)  &kp EQUAL    &trans     &trans      &kp PRCNT
-                                                         &to 0  &bootloader        &kp DEL     &trans
+ &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET                       &kp PG_UP     &kp LC(A) &kp UP   &kp LC(E) &kp UNDER
+ &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH                        &kp PG_DN     &kp LEFT  &kp DOWN &kp RIGHT &mt RSHFT DQT
+ &trans          &trans        &kp LBRC       &kp RBRC      &kp STAR                        &kp LG(SPACE) &kp EQUAL &trans   &trans    &kp PRCNT
+                                                            &to BLYR  &bootloader   &kp DEL &trans
             >;
         };
 
         right_layer {
             bindings = <
-  &kp N1    &kp N2        &kp N3       &kp N4    &kp N5     &kp N6        &kp N7          &kp N8         &kp N9           &kp N0
- &kp TAB  &kp LALT  &mt LCTRL LT  &mt LGUI GT    &trans  &kp QMARK  &mt RGUI SQT  &mt RCTRL PIPE  &mt RALT AMPS  &mt RSHFT MINUS
-  &trans    &trans        &trans    &kp GRAVE    &trans     &trans      &kp PLUS          &trans         &trans         &kp BSLH
-                                        &to 0  &kp BSPC    &kp ESC        &trans
+ &kp N1  &kp N2   &kp N3       &kp N4      &kp N5                       &kp N6    &kp N7       &kp N8         &kp N9        &kp N0
+ &kp TAB &kp LALT &mt LCTRL LT &mt LGUI GT &trans                       &kp QMARK &mt RGUI SQT &mt RCTRL PIPE &mt RALT AMPS &mt RSHFT MINUS
+ &trans  &trans   &trans       &kp GRAVE   &trans                       &trans    &kp PLUS     &trans         &trans        &kp BSLH
+                                           &to BLYR &kp BSPC    &kp ESC &trans
             >;
         };
 
         navigation_layer {
             bindings = <
-    &trans  &mwh SCROLL_VERT(-25)  &mmv MOVE_VERT(-2200)  &mwh SCROLL_VERT(25)     &trans    &kp C_PP  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_PREV  &kp C_NEXT
- &mkp LCLK   &mmv MOVE_HOR(-2200)   &mmv MOVE_VERT(2200)   &mmv MOVE_HOR(2200)     &trans      &trans      &kp RGUI     &kp RCTRL    &kp RALT   &kp RSHFT
-    &trans                 &trans                 &trans                &trans     &trans      &trans  &kp C_BRI_UP  &kp C_BRI_DN      &trans      &trans
-                                                                         &to 0  &mkp RCLK  &kp C_MUTE        &trans
+ &trans     &mwh SCROLL_VERT(-25) &mmv MOVE_VERT(-2200) &mwh SCROLL_VERT(25) &trans                           &kp C_PP &kp C_VOL_UP &kp C_VOL_DN &kp C_PREV &kp C_NEXT
+ &mkp LCLK  &mmv MOVE_HOR(-2200)  &mmv MOVE_VERT(2200)  &mmv MOVE_HOR(2200)  &trans                           &trans   &kp RGUI     &kp RCTRL    &kp RALT   &kp RSHFT
+ &trans     &trans                &trans                &trans               &trans                           &trans   &kp C_BRI_UP &kp C_BRI_DN &trans     &trans
+                                                                             &to BLYR &mkp RCLK    &kp C_MUTE &trans
             >;
         };
 
         game_layer {
             bindings = <
-        &kp ESC         &kp Q   &kp W      &kp E      &kp T  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans   &to 0
- &kp LEFT_SHIFT         &kp A   &kp S      &kp D      &kp F  &trans  &trans  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR
-   &kp NUMBER_1  &kp NUMBER_2  &trans     &trans    &kp TAB  &trans  &trans  &trans  &trans  &trans
-                                       &kp LCTRL  &kp SPACE  &trans  &trans
+ &kp ESC   &kp Q  &kp W  &kp E  &kp T                          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans     &to BLYR
+ &kp LSHFT &kp A  &kp S  &kp D  &kp F                          &trans       &trans       &bt BT_PRV   &bt BT_NXT &bt BT_CLR
+ &kp N1    &kp N2 &trans &trans &trans                         &trans       &trans       &trans       &trans     &trans
+                                &kp LCTRL &kp SPACE    &trans  &trans
             >;
         };
     };
