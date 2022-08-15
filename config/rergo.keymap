@@ -123,9 +123,9 @@
 
         navigation_layer {
             bindings = <
- &trans     &mwh SCROLL_VERT(-25) &mmv MOVE_VERT(-2200) &mwh SCROLL_VERT(25) &trans                           &kp C_PP &kp C_VOL_UP &kp C_VOL_DN &kp C_PREV &kp C_NEXT
+ &trans     &mwh SCROLL_VERT(-25) &mmv MOVE_VERT(-2200) &mwh SCROLL_VERT(25) &trans                           &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT
  &mkp LCLK  &mmv MOVE_HOR(-2200)  &mmv MOVE_VERT(2200)  &mmv MOVE_HOR(2200)  &trans                           &trans   &kp RGUI     &kp RCTRL    &kp RALT   &kp RSHFT
- &trans     &trans                &trans                &trans               &trans                           &trans   &kp C_BRI_UP &kp C_BRI_DN &trans     &trans
+ &trans     &trans                &trans                &trans               &trans                           &trans   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans
                                                                              &to BLYR &mkp RCLK    &kp C_MUTE &trans
             >;
         };
