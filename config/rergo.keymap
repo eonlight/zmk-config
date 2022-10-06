@@ -53,26 +53,21 @@
             bindings = <&kp DEL>;
         };
 
-        combo_left_ent {
+        combo_left_home_tab {
             timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp RET>;
+            key-positions = <12 13>;
+            bindings = <&kp TAB>;
         };
 
 
         // right side combos
 
-        combo_right_bspc {
+        combo_right_esc {
             timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp BSPC>;
+            key-positions = <16 17>;
+            bindings = <&kp ESC>;
         };
 
-        combo_right_del {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            bindings = <&kp DEL>;
-        };
 
     };
 
