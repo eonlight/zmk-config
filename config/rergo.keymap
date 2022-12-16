@@ -13,7 +13,7 @@
 #define LLYR 1
 #define RLYR 2
 #define NLYR 3
-#define GLYR 4
+#define QLYR 4
 
 // mouse movement
 #define MMUP MOVE_VERT(-2200)
@@ -77,7 +77,7 @@
             label = "MO_LAYERS_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to NLYR>, <&to GLYR>;
+            bindings = <&mo LLYR>, <&to NLYR>, <&to QLYR>;
         };
     };
 
@@ -125,12 +125,12 @@
             >;
         };
 
-        game_layer {
+        qwerty_layer {
             bindings = <
- &kp ESC   &kp Q  &kp W  &kp E  &kp T                          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans     &to BLYR
- &kp LSHFT &kp A  &kp S  &kp D  &kp F                          &trans       &trans       &bt BT_PRV   &bt BT_NXT &bt BT_CLR
- &kp N1    &kp N2 &trans &trans &trans                         &trans       &trans       &trans       &trans     &trans
-                                &kp LCTRL &kp SPACE    &trans  &trans
+ &kp Q       &kp W       &kp E       &kp R      &kp T                          &kp Y    &kp U      &kp I       &kp O      &kp P
+ &mt LSHFT A &mt LALT S  &mt LCTRL D &mt LGUI F &kp G                          &kp H    &mt LGUI J &mt LCTRL K &mt LALT L &mt LSHFT SEMI
+ &kp Z       &kp X       &kp C       &kp V      &kp B                          &kp N    &kp M      &kp COMMA   &kp DOT    &kp FSLH
+                                                &mo LLYR  &kp SPACE    &kp RET &mo RLYR
             >;
         };
     };
