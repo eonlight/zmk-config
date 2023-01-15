@@ -14,7 +14,7 @@
 #define RLYR 2
 #define NLYR 3
 #define QLYR 4
-#define SLYR 4
+#define SLYR 5
 
 // mouse movement
 #define MMUP MOVE_VERT(-2200)
@@ -183,7 +183,7 @@
 
         default_layer {
             bindings = <
- &tp1        &tp2        &tp3        &tp4       &tp5                       &tp6     &tp7       &tp8        &tp9       &tp0
+ &td1        &td2        &td3        &td4       &td5                       &td6     &td7       &td8        &td9       &td0
  &mt LSHFT A &mt LALT R  &mt LCTRL S &mt LGUI T &kp G                      &kp K    &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
  &kp Z       &kp X       &kp C       &kp D      &kp V                      &kp M    &kp H      &kp COMMA   &kp DOT    &kp FSLH
                                                 &tdl  &kp SPACE    &kp RET &mo RLYR
