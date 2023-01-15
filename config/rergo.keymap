@@ -14,6 +14,7 @@
 #define RLYR 2
 #define NLYR 3
 #define QLYR 4
+#define SLYR 4
 
 // mouse movement
 #define MMUP MOVE_VERT(-2200)
@@ -86,7 +87,7 @@
             label = "TAP_DANCE_MO_LAYERS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to QLYR>;
+            bindings = <&mo LLYR>, <&to QLYR>, <&to SLYR>;
         };
 
         // numbers dance
@@ -97,7 +98,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp N1>;
-        }
+        };
 
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
@@ -105,7 +106,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp W>, <&kp N2>;
-        }
+        };
 
         td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
@@ -113,7 +114,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp F>, <&kp N3>;
-        }
+        };
 
         td4: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
@@ -121,7 +122,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp P>, <&kp N4>;
-        }
+        };
 
         td5: tap_dance_5 {
             compatible = "zmk,behavior-tap-dance";
@@ -129,7 +130,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp B>, <&kp N5>;
-        }
+        };
 
         td6: tap_dance_6 {
             compatible = "zmk,behavior-tap-dance";
@@ -137,7 +138,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp J>, <&kp N6>;
-        }
+        };
 
         td7: tap_dance_7 {
             compatible = "zmk,behavior-tap-dance";
@@ -145,7 +146,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp L>, <&kp N7>;
-        }
+        };
 
         td8: tap_dance_8 {
             compatible = "zmk,behavior-tap-dance";
@@ -153,7 +154,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp U>, <&kp N8>;
-        }
+        };
 
         td9: tap_dance_9 {
             compatible = "zmk,behavior-tap-dance";
@@ -161,7 +162,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp Y>, <&kp N9>;
-        }
+        };
 
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -169,7 +170,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SEMI>, <&kp N0>;
-        }
+        };
     };
 
     //    0    1    2    3    4                 5    6    7    8    9
@@ -218,10 +219,19 @@
 
         qwerty_layer {
             bindings = <
- &kp Q       &kp W       &kp E       &kp R      &kp T                          &kp Y    &kp U      &kp I       &kp O      &kp P
- &mt LSHFT A &mt LALT S  &mt LCTRL D &mt LGUI F &kp G                          &kp H    &mt LGUI J &mt LCTRL K &mt LALT L &mt LSHFT SEMI
- &kp Z       &kp X       &kp C       &kp V      &kp B                          &kp N    &kp M      &kp COMMA   &kp DOT    &kp FSLH
+ &kp Q       &kp W      &kp E       &kp R      &kp T                          &kp Y    &kp U      &kp I       &kp O      &kp P
+ &mt LSHFT A &mt LALT S &mt LCTRL D &mt LGUI F &kp G                          &kp H    &mt LGUI J &mt LCTRL K &mt LALT L &mt LSHFT SEMI
+ &kp Z       &kp X      &kp C       &kp V      &kp B                          &kp N    &kp M      &kp COMMA   &kp DOT    &kp FSLH
                                                 &mo LLYR  &kp SPACE    &kp RET &mo RLYR
+            >;
+        };
+
+        system_layer {
+            bindings = <
+ &trans &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
+ &trans &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
+ &trans &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
+                             &trans &trans    &trans &trans
             >;
         };
     };
