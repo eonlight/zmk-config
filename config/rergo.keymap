@@ -96,7 +96,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_1_Q";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <220>; // needed to be increase for some reason
             bindings = <&kp Q>, <&kp N1>;
         };
 
@@ -104,7 +104,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_2_W";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <220>; // needed to be increase for some reason
             bindings = <&kp W>, <&kp N2>;
         };
 
@@ -120,7 +120,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_4_P";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <220>; // needed to be increase for some reason
             bindings = <&kp P>, <&kp N4>;
         };
 
@@ -144,7 +144,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_7_L";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <175>; // had to be lowered because of double l words
             bindings = <&kp L>, <&kp N7>;
         };
 
@@ -183,19 +183,19 @@
 
         default_layer {
             bindings = <
- &td1        &td2        &td3        &td4       &td5                       &td6     &td7       &td8        &td9       &td0
- &mt LSHFT A &mt LALT R  &mt LCTRL S &mt LGUI T &kp G                      &kp K    &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
- &kp Z       &kp X       &kp C       &kp D      &kp V                      &kp M    &kp H      &kp COMMA   &kp DOT    &kp FSLH
-                                                &tdl  &kp SPACE    &kp RET &mo RLYR
+ &td1        &td2       &td3        &td4       &td5                       &td6     &td7       &td8        &td9       &td0
+ &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G                      &kp K    &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
+ &kp Z       &kp X      &kp C       &kp D      &kp V                      &kp M    &kp H      &kp COMMA   &kp DOT    &kp FSLH
+                                               &tdl  &kp SPACE    &kp RET &mo RLYR
             >;
         };
 
         left_layer {
             bindings = <
- &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET                       &kp PG_UP     &kp LC(A) &kp UP   &kp LC(E) &kp UNDER
- &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &trans                          &kp PG_DN     &kp LEFT  &kp DOWN &kp RIGHT &mt LSHFT DQT
- &trans          &trans        &kp LBRC       &kp RBRC      &trans                          &kp LG(SPACE) &kp EQUAL &trans   &trans    &kp PRCNT
-                                                            &to BLYR  &bootloader   &kp DEL &trans
+ &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET                   &kp PG_UP     &kp LC(A) &kp DQT  &kp LC(E) &kp UNDER
+ &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &trans                      &kp PG_DN     &kp LEFT  &kp DOWN &kp RIGHT &kp UP
+ &trans          &trans        &kp LBRC       &kp RBRC      &trans                      &kp LG(SPACE) &kp EQUAL &trans   &trans    &kp PRCNT
+                                                            &to BLYR  &trans    &kp DEL &trans
             >;
         };
 
@@ -222,16 +222,16 @@
  &kp Q       &kp W      &kp E       &kp R      &kp T                          &kp Y    &kp U      &kp I       &kp O      &kp P
  &mt LSHFT A &mt LALT S &mt LCTRL D &mt LGUI F &kp G                          &kp H    &mt LGUI J &mt LCTRL K &mt LALT L &mt LSHFT SEMI
  &kp Z       &kp X      &kp C       &kp V      &kp B                          &kp N    &kp M      &kp COMMA   &kp DOT    &kp FSLH
-                                                &mo LLYR  &kp SPACE    &kp RET &mo RLYR
+                                                &mo LLYR &kp SPACE    &kp RET &mo RLYR
             >;
         };
 
         system_layer {
             bindings = <
- &trans &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
- &trans &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
-                             &trans &trans    &trans &trans
+ &bootloader &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
+ &trans      &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
+ &trans      &trans &trans &trans &trans                  &trans &trans &trans &trans &trans
+                                  &trans &trans    &trans &trans
             >;
         };
     };
