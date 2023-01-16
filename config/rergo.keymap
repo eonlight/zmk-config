@@ -96,7 +96,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_1_Q";
             #binding-cells = <0>;
-            tapping-term-ms = <220>; // needed to be increase for some reason
+            tapping-term-ms = <230>; // needed to be increase for some reason
             bindings = <&kp Q>, <&kp N1>;
         };
 
@@ -144,7 +144,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_7_L";
             #binding-cells = <0>;
-            tapping-term-ms = <175>; // had to be lowered because of double l words
+            tapping-term-ms = <165>; // had to be lowered because of double l words
             bindings = <&kp L>, <&kp N7>;
         };
 
@@ -181,6 +181,10 @@
     keymap {
         compatible = "zmk,keymap";
 
+    // q w f p b    j l u y ;
+    // a r s t g    k n e i o
+    // z x c d v    m h . . /
+
         default_layer {
             bindings = <
  &td1        &td2       &td3        &td4       &td5                       &td6     &td7       &td8        &td9       &td0
@@ -190,23 +194,35 @@
             >;
         };
 
+    // ! @ [ ] ^    = < > y _
+    // ~ $ ( ) #    ? ' | & -
+    // ` x { } *    % + , " \
+
         left_layer {
             bindings = <
- &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET                   &kp PG_UP     &kp LC(A) &kp DQT  &kp LC(E) &kp UNDER
- &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &trans                      &kp PG_DN     &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &trans          &trans        &kp LBRC       &kp RBRC      &trans                      &kp LG(SPACE) &kp EQUAL &trans   &trans    &kp PRCNT
-                                                            &to BLYR  &trans    &kp DEL &trans
+ &kp EXCL  &kp AT   &kp LBKT &kp RBKT &kp CARET                   &kp EQUAL &kp LT   &kp GT   &trans   &kp UNDER
+ &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kb HASH                    &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
+ &kp GRAVE &trans   &kp LBRC &kp RBRC &kp STAR                    &kp PRCNT &kp PLUS &trans   &kp DQT  &kp BSLH
+                                      &to BLYR  &trans    &kp DEL &trans
             >;
         };
 
+    // q   w   f   p   b    PUP BLN NONE ELN ;
+    // SFT ALT CTR GUI g    PDN LT  DN   RT  UP
+    // z   x   c   d   v    CSP h   ,    .   /
+
         right_layer {
             bindings = <
- &kp N1  &kp N2   &kp N3       &kp N4      &kp N5                       &kp N6    &kp N7       &kp N8         &kp N9        &kp N0
- &kp TAB &kp LALT &mt LCTRL LT &mt LGUI GT &kp HASH                     &kp QMARK &mt LGUI SQT &mt LCTRL PIPE &mt LALT AMPS &mt LSHFT MINUS
- &trans  &trans   &trans       &kp GRAVE   &kp STAR                     &trans    &kp PLUS     &trans         &trans        &kp BSLH
-                                           &to BLYR &kp BSPC    &kp ESC &trans
+ &trans    &trans   &trans    &trans   &trans                      &kp PG_UP     &kp LC(A) &none   &kp LC(E) &trans
+ &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &trans                      &kp PG_DN     &kp LEFT  &kp DOWN &kp RIGHT &kp UP
+ &trans    &trans   &trans    &trans   &trans                      &kp LG(SPACE) &trans    &trans   &trans    &trans
+                                       &to BLYR &kp BSPC    &trans &trans
             >;
         };
+
+    // q   SDN MUP SUP b    PP VDN VUP PRV NXT
+    // LCK MLT MDN MRT g    k  LGI LCT LAT RCK
+    // z   x   c   d   v    h  BDN BUP .   /
 
         navigation_layer {
             bindings = <
@@ -219,10 +235,10 @@
 
         qwerty_layer {
             bindings = <
- &kp Q       &kp W      &kp E       &kp R      &kp T                          &kp Y    &kp U      &kp I       &kp O      &kp P
- &mt LSHFT A &mt LALT S &mt LCTRL D &mt LGUI F &kp G                          &kp H    &mt LGUI J &mt LCTRL K &mt LALT L &mt LSHFT SEMI
- &kp Z       &kp X      &kp C       &kp V      &kp B                          &kp N    &kp M      &kp COMMA   &kp DOT    &kp FSLH
-                                                &mo LLYR &kp SPACE    &kp RET &mo RLYR
+ &kp Q &kp W &kp E &kp R &kp T                         &kp Y  &kp U &kp I     &kp O   &kp P
+ &kp A &kb S &kp D &kp F &kp G                         &kp H  &kp J &kp K     &kp L   &kp SEMI
+ &kp Z &kp X &kp C &kp V &kp B                         &kp N  &kp M &kp COMMA &kp DOT &kp FSLH
+                         &to BLYR &kp SPACE    &kp RET &trans
             >;
         };
 
@@ -236,3 +252,4 @@
         };
     };
 };
+
