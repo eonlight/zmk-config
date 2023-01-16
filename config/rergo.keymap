@@ -201,7 +201,7 @@
         left_layer {
             bindings = <
  &kp EXCL  &kp AT   &kp LBKT &kp RBKT &kp CARET                   &kp EQUAL &kp LT   &kp GT   &trans   &kp UNDER
- &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kb HASH                    &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
+ &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kp HASH                    &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
  &kp GRAVE &trans   &kp LBRC &kp RBRC &kp STAR                    &kp PRCNT &kp PLUS &trans   &kp DQT  &kp BSLH
                                       &to BLYR  &trans    &kp DEL &trans
             >;
@@ -209,7 +209,7 @@
 
     // q   w   f   p   b    PUP BLN NONE ELN ;
     // SFT ALT CTR GUI g    PDN LT  DN   RT  UP
-    // z   x   c   d   v    CSP h   ,    .   /
+    // z   x   c   d   v    CSP h   ,    q.   /
 
         right_layer {
             bindings = <
@@ -236,7 +236,7 @@
         qwerty_layer {
             bindings = <
  &kp Q &kp W &kp E &kp R &kp T                         &kp Y  &kp U &kp I     &kp O   &kp P
- &kp A &kb S &kp D &kp F &kp G                         &kp H  &kp J &kp K     &kp L   &kp SEMI
+ &kp A &kp S &kp D &kp F &kp G                         &kp H  &kp J &kp K     &kp L   &kp SEMI
  &kp Z &kp X &kp C &kp V &kp B                         &kp N  &kp M &kp COMMA &kp DOT &kp FSLH
                          &to BLYR &kp SPACE    &kp RET &trans
             >;
