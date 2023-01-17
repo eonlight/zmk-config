@@ -5,7 +5,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <175>;
+    tapping_term_ms = <200>; // leave at 200
 };
 
 // layers
@@ -120,7 +120,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_4_P";
             #binding-cells = <0>;
-            tapping-term-ms = <220>; // needed to be increase for some reason
+            tapping-term-ms = <225>; // needed to be increase for some reason
             bindings = <&kp P>, <&kp N4>;
         };
 
@@ -209,7 +209,7 @@
 
     // q   w   f   p   b    PUP BLN NONE ELN ;
     // SFT ALT CTR GUI g    PDN LT  DN   RT  UP
-    // z   x   c   d   v    CSP h   ,    q.   /
+    // z   x   c   d   v    CSP h   ,    .   /
 
         right_layer {
             bindings = <
