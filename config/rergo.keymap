@@ -5,7 +5,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <200>; // leave at 200
+    tapping_term_ms = <190>; // leave at 190
 };
 
 // layers
@@ -96,7 +96,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_1_Q";
             #binding-cells = <0>;
-            tapping-term-ms = <230>; // needed to be increase for some reason
+            tapping-term-ms = <235>; // needed to be increase for some reason
             bindings = <&kp Q>, <&kp N1>;
         };
 
@@ -112,7 +112,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_3_F";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <210>;
             bindings = <&kp F>, <&kp N3>;
         };
 
@@ -144,7 +144,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_7_L";
             #binding-cells = <0>;
-            tapping-term-ms = <165>; // had to be lowered because of double l words
+            tapping-term-ms = <155>; // had to be lowered because of double l words
             bindings = <&kp L>, <&kp N7>;
         };
 
@@ -203,7 +203,7 @@
  &kp EXCL  &kp AT   &kp LBKT &kp RBKT &kp CARET                   &kp EQUAL &kp LT   &kp GT   &trans   &kp UNDER
  &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kp HASH                    &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
  &kp GRAVE &trans   &kp LBRC &kp RBRC &kp STAR                    &kp PRCNT &kp PLUS &trans   &kp DQT  &kp BSLH
-                                      &to BLYR  &trans    &kp DEL &trans
+                                      &trans    &trans    &kp DEL &trans
             >;
         };
 
@@ -213,9 +213,9 @@
 
         right_layer {
             bindings = <
- &trans    &trans   &trans    &trans   &trans                      &kp PG_UP     &kp LC(A) &none   &kp LC(E) &trans
- &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &trans                      &kp PG_DN     &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &trans    &trans   &trans    &trans   &trans                      &kp LG(SPACE) &trans    &trans   &trans    &trans
+ &trans    &trans   &trans    &trans   &trans                      &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
+ &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &trans                      &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
+ &trans    &trans   &trans    &trans   &trans                      &kp &trans &trans    &trans   &trans    &trans
                                        &to BLYR &kp BSPC    &trans &trans
             >;
         };
@@ -226,10 +226,10 @@
 
         navigation_layer {
             bindings = <
- &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans                        &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT
- &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans                        &trans   &kp LGUI     &kp LCTRL    &kp LALT   &mkp RCLK
- &trans    &trans    &trans    &trans    &trans                        &trans   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans
-                                         &to BLYR &trans    &kp C_MUTE &trans
+ &trans    &mwh SMDN &mmv MMUP &mwh SMUP &trans                      &kp C_PP &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT
+ &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans                      &trans   &kp LGUI     &kp LCTRL    &kp LALT   &mkp RCLK
+ &trans    &trans    &trans    &trans    &trans                      &trans   &kp C_BRI_DN &kp C_BRI_UP &trans     &trans
+                                         &trans &trans    &kp C_MUTE &trans
             >;
         };
 
