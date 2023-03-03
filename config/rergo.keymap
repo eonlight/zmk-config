@@ -56,19 +56,10 @@
 
         combo_left_home_tab {
             // lowered the timeout because it was being triggered too often
-            timeout-ms = <30>;
+            timeout-ms = <25>;
             key-positions = <12 13>;
             bindings = <&kp TAB>;
         };
-
-        // right side combos
-
-        combo_right_esc {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp ESC>;
-        };
-
 
     };
 
@@ -216,7 +207,7 @@
  &trans    &trans   &trans    &trans   &trans                      &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
  &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &trans                      &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
  &trans    &trans   &trans    &trans   &trans                      &kp &trans &trans    &trans   &trans    &trans
-                                       &to BLYR &kp BSPC    &trans &trans
+                                       &trans &kp BSPC    &trans &trans
             >;
         };
 
