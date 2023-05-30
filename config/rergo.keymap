@@ -56,7 +56,7 @@
 
         combo_left_home_tab {
             // lowered the timeout because it was being triggered too often
-            timeout-ms = <25>;
+            timeout-ms = <20>;
             key-positions = <12 13>;
             bindings = <&kp TAB>;
         };
@@ -111,7 +111,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_4_P";
             #binding-cells = <0>;
-            tapping-term-ms = <225>; // needed to be increase for some reason
+            tapping-term-ms = <200>;
             bindings = <&kp P>, <&kp N4>;
         };
 
@@ -198,16 +198,16 @@
             >;
         };
 
-    // q   w   f   p   b    PUP BLN NONE ELN ;
-    // SFT ALT CTR GUI g    PDN LT  DN   RT  UP
-    // z   x   c   d   v    CSP h   ,    .   /
+    // 1 2 3 4 5    PUP BLN NONE ELN ;
+    // 6 7 8 9 0    PDN LT  DN   RT  UP
+    // z x c d v    CSP h   ,    .   /
 
         right_layer {
             bindings = <
- &trans    &trans   &trans    &trans   &trans                      &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
- &kp LSHFT &kp LALT &kp LCTRL &kp LGUI &trans                      &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &trans    &trans   &trans    &trans   &trans                      &kp &trans &trans    &trans   &trans    &trans
-                                       &trans &kp BSPC    &trans &trans
+ &kp N1       &kp N2      &kp N3       &kp N4      &kp N5                    &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
+ &mt LSHFT N6 &mt LALT N7 &mt LCTRL N8 &mt LGUI N9 &kp N0                    &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
+ &trans       &trans      &trans       &trans      &trans                    &kp &trans &trans    &trans   &trans    &trans
+                                                   &trans &kp BSPC    &trans &trans
             >;
         };
 
