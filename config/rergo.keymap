@@ -80,88 +80,6 @@
             tapping-term-ms = <200>;
             bindings = <&mo LLYR>, <&to QLYR>, <&to SLYR>;
         };
-
-        // numbers dance
-
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1_Q";
-            #binding-cells = <0>;
-            tapping-term-ms = <235>; // needed to be increase for some reason
-            bindings = <&kp Q>, <&kp N1>;
-        };
-
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2_W";
-            #binding-cells = <0>;
-            tapping-term-ms = <220>; // needed to be increase for some reason
-            bindings = <&kp W>, <&kp N2>;
-        };
-
-        td3: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_3_F";
-            #binding-cells = <0>;
-            tapping-term-ms = <210>;
-            bindings = <&kp F>, <&kp N3>;
-        };
-
-        td4: tap_dance_4 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_4_P";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp P>, <&kp N4>;
-        };
-
-        td5: tap_dance_5 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_5_B";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp B>, <&kp N5>;
-        };
-
-        td6: tap_dance_6 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_6_J";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp J>, <&kp N6>;
-        };
-
-        td7: tap_dance_7 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_7_L";
-            #binding-cells = <0>;
-            tapping-term-ms = <155>; // had to be lowered because of double l words
-            bindings = <&kp L>, <&kp N7>;
-        };
-
-        td8: tap_dance_8 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_8_U";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp U>, <&kp N8>;
-        };
-
-        td9: tap_dance_9 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_9_Y";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp Y>, <&kp N9>;
-        };
-
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0_SEMI";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SEMI>, <&kp N0>;
-        };
     };
 
     //    0    1    2    3    4                 5    6    7    8    9
@@ -178,38 +96,66 @@
 
         default_layer {
             bindings = <
- &td1        &td2       &td3        &td4       &td5                       &td6     &td7       &td8        &td9       &td0
+ &kp Q       &kp W      &kp F       &kp P      &kp B                      &kp J    &kp L      &kp U       &kp Y      &kp SEMI
  &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G                      &kp K    &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
  &kp Z       &kp X      &kp C       &kp D      &kp V                      &kp M    &kp H      &kp COMMA   &kp DOT    &kp FSLH
                                                &tdl  &kp SPACE    &kp RET &mo RLYR
             >;
         };
 
+    // 1 2 3 4 5    = < > y _
+    // 6 7 8 9 0    ? ' | & -
+    // ` x c d v    % + , " \
+
+        left_layer {
+            bindings = <
+ &kp N1       &kp N2      &kp N3       &kp N4      &kp N5                   &kp EQUAL &kp LT   &kp GT   &trans   &kp UNDER
+ &mt LSHFT N6 &mt LALT N7 &mt LCTRL N8 &mt LGUI N9 &kp N0                   &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
+ &kp GRAVE    &trans      &trans       &trans      &trans                   &kp PRCNT &kp PLUS &trans   &kp DQT  &kp BSLH
+                                                   &trans &trans    &kp DEL &trans
+            >;
+        };
+
+
     // ! @ [ ] ^    = < > y _
     // ~ $ ( ) #    ? ' | & -
     // ` x { } *    % + , " \
 
-        left_layer {
+//        left_layer {
+//            bindings = <
+// &kp EXCL  &kp AT   &kp LBKT &kp RBKT &kp CARET                   &kp EQUAL &kp LT   &kp GT   &trans   &kp UNDER
+// &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kp HASH                    &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
+// &kp GRAVE &trans   &kp LBRC &kp RBRC &kp STAR                    &kp PRCNT &kp PLUS &trans   &kp DQT  &kp BSLH
+//                                      &trans    &trans    &kp DEL &trans
+//            >;
+//        };
+
+    // ! @ [ ] ^    PUP BLN NONE ELN ;
+    // ~ $ ( ) #    PDN LT  DN   RT  UP
+    // ` x { } *    CSP h   ,    .   /
+
+        right_layer {
             bindings = <
- &kp EXCL  &kp AT   &kp LBKT &kp RBKT &kp CARET                   &kp EQUAL &kp LT   &kp GT   &trans   &kp UNDER
- &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kp HASH                    &kp QMARK &kp SQT  &kp PIPE &kp AMPS &kp MINUS
- &kp GRAVE &trans   &kp LBRC &kp RBRC &kp STAR                    &kp PRCNT &kp PLUS &trans   &kp DQT  &kp BSLH
-                                      &trans    &trans    &kp DEL &trans
+ &kp EXCL  &kp AT   &kp LBKT &kp RBKT &kp CARET                 &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
+ &kp TILDE &kp DLLR &kp LPAR &kp RPAR &kp HASH                  &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
+ &kp GRAVE &trans   &kp LBRC &kp RBRC &kp STAR                  &kp &trans &trans    &trans   &trans    &trans
+                                      &trans &kp BSPC    &trans &trans
             >;
         };
+
 
     // 1 2 3 4 5    PUP BLN NONE ELN ;
     // 6 7 8 9 0    PDN LT  DN   RT  UP
     // z x c d v    CSP h   ,    .   /
 
-        right_layer {
-            bindings = <
- &kp N1       &kp N2      &kp N3       &kp N4      &kp N5                    &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
- &mt LSHFT N6 &mt LALT N7 &mt LCTRL N8 &mt LGUI N9 &kp N0                    &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &trans       &trans      &trans       &trans      &trans                    &kp &trans &trans    &trans   &trans    &trans
-                                                   &trans &kp BSPC    &trans &trans
-            >;
-        };
+//        right_layer {
+//            bindings = <
+// &kp N1       &kp N2      &kp N3       &kp N4      &kp N5                    &kp PG_UP  &kp LC(A) &none    &kp LC(E) &trans
+// &mt LSHFT N6 &mt LALT N7 &mt LCTRL N8 &mt LGUI N9 &kp N0                    &kp PG_DN  &kp LEFT  &kp DOWN &kp RIGHT &kp UP
+// &trans       &trans      &trans       &trans      &trans                    &kp &trans &trans    &trans   &trans    &trans
+//                                                   &trans &kp BSPC    &trans &trans
+//            >;
+//        };
 
     // q   SDN MUP SUP b    PP VDN VUP PRV NXT
     // LCK MLT MDN MRT g    k  LGI LCT LAT RCK
