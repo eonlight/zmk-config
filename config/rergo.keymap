@@ -157,10 +157,10 @@
 
         navigation_layer {
             bindings = <
- &trans    &msc SCRL_UP &mmv MMUP &msc SCRL_DOWN &trans        &kp C_PP   &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT
- &mkp LCLK &mmv MMLT &mmv MMDN &mmv MMRT &trans        &trans     &kp LGUI     &kp LCTRL    &kp LALT   &mkp RCLK
- &trans    &trans    &trans    &trans    &trans        &trans     &kp C_BRI_DN &kp C_BRI_UP &trans     &trans
-                               &trans    &trans        &kp C_MUTE &trans
+ &trans    &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans        &kp C_PP     &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT
+ &mkp LCLK &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans        &trans       &kp LGUI     &kp LCTRL    &kp LALT   &mkp RCLK
+ &trans    &trans    &trans    &trans    &trans          &trans        &kp C_BRI_DN &kp C_BRI_UP &trans       &trans
+                                         &trans          &trans        &kp C_MUTE   &trans
             >;
         };
 
