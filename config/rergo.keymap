@@ -1,11 +1,5 @@
-// mouse movement
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/pointing.h>
 
 &mt {
     flavor = "tap-preferred";
@@ -13,79 +7,11 @@
 };
 
 // layers
-#define BLYR 0
-#define LLYR 1
-#define RLYR 2
-#define NLYR 3
-#define QLYR 4
-#define SLYR 5
+#define BASE 0
+#define LEFT 1
+#define RIGH 2
 
 / {
-
-// ---------------------    ---------------------
-// | 0 | 1 | 2 | 3 | 4 |    | 5 | 6 | 7 | 8 | 9 |
-// | 10| 11| 12| 13| 14|    | 15| 16| 17| 18| 19|
-// | 20| 21| 22| 23| 24|    | 25| 26| 27| 28| 29|
-// --------| 30| 31| 32|    | 33| 34| 35|--------
-//         -------------    -------------
-
-    combos {
-        compatible = "zmk,combos";
-
-        combo_left_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_left_del {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            bindings = <&kp DEL>;
-        };
-
-        combo_left_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_left_home_tab {
-            // lowered the timeout because it was being triggered too often
-            timeout-ms = <20>;
-            key-positions = <12 13>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_right_home_tab {
-            // lowered the timeout because it was being triggered too often
-            timeout-ms = <20>;
-            key-positions = <16 17>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_left_bspc {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp BSPC>;
-        };
-    };
-
-    behaviors {
-        tdll: tap_dance_layer_lest {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to QLYR>, <&to SLYR>;
-        };
-
-        tdlr: tap_dance_layer_right {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo RLYR>, <&mo NLYR>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -102,7 +28,7 @@
  &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
  &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
  &kp Z       &kp X      &kp C       &kp D      &kp V        &kp M   &kp H      &kp COMMA   &kp DOT    &kp FSLH
-                        &none       &tdll      &kp SPACE    &kp RET &tdlr      &none
+                        &none       &to LEFT   &kp SPACE    &kp RET &to RIGHT  &none
             >;
         };
 
@@ -135,54 +61,6 @@
  &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH     &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp UP
  &kp GRAVE       &trans        &kp LBRC       &kp RBRC      &kp STAR     &trans    &trans    &trans   &trans    &trans
                                &trans         &trans        &kp BSPC     &trans    &trans    &trans
-            >;
-        };
-
-// ---------------------    ---------------------
-// |PSG|NSG|VDN|VUP| ^ |    | PP|SUP|MUP|SDN| _ |
-// | ~ |LAL|LCT|LGI| # |    |PDN|MLT|MDN|MRT|RCL|
-// | ` | x |BDN|BUP| * |    | m |LCL| , | . | / |
-// --------|TRN|BLR|MUT|    |BSP|TRN|TRN|-------|
-//         -------------    -------------
-
-        navigation_layer {
-            bindings = <
- &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &trans        &kp C_PP &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans
- &trans     &kp LALT   &kp LCTRL    &kp LGUI     &trans        &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp RCLK
- &trans     &trans     &kp C_BRI_DN &kp C_BRI_UP &trans        &trans   &mkp LCLK      &trans         &trans          &trans
-                       &trans       &to BLYR     &kp C_MUTE    &trans   &trans         &trans
-            >;
-        };
-
-// ---------------------    ---------------------
-// | q | w | e | r | t |    | y | u | i | o | p |
-// | a | s | d | f | g |    | h | j | k | l | ; |
-// | z | x | c | v | b |    | n | m | , | . | / |
-// --------|TRN|BLR|SPC|    |RET|TRN|TRN|-------|
-//         -------------    -------------
-
-        qwerty_layer {
-            bindings = <
- &kp Q &kp W &kp E  &kp R    &kp T        &kp Y   &kp U  &kp I     &kp O   &kp P
- &kp A &kp S &kp D  &kp F    &kp G        &kp H   &kp J  &kp K     &kp L   &kp SEMI
- &kp Z &kp X &kp C  &kp V    &kp B        &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH
-             &trans &to BLYR &kp SPACE    &kp RET &trans &trans
-            >;
-        };
-
-// ---------------------    ---------------------
-// |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
-// |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
-// |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
-// --------|TRN|BLR|TRN|    |TRN|TRN|TRN|-------|
-//         -------------    -------------
-
-        system_layer {
-            bindings = <
- &bootloader &trans &trans &studio_unlock &trans    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
- &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
- &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
-                    &trans &to BLYR       &trans    &trans     &trans       &trans
             >;
         };
     };
