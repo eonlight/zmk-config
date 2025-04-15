@@ -26,8 +26,8 @@
 // | 0 | 1 | 2 | 3 | 4 |    | 5 | 6 | 7 | 8 | 9 |
 // | 10| 11| 12| 13| 14|    | 15| 16| 17| 18| 19|
 // | 20| 21| 22| 23| 24|    | 25| 26| 27| 28| 29|
-// ------------| 30| 31|    | 32| 33|------------
-//             ---------    ---------
+// --------| 30| 31| 32|    | 33| 34| 35|--------
+//         -------------    -------------
 
     combos {
         compatible = "zmk,combos";
@@ -89,15 +89,15 @@
 // | q | w | f | p | b |    | j | l | u | y | ; |
 // | a | r | s | t | g |    | k | n | e | i | o |
 // | z | x | c | d | v |    | m | h | , | . | / |
-// ------------|TDL|SPC|    |RET|TDR|------------
-//             ---------    ---------
+// --------|NON|TDL|SPC|    |RET|TDR|NON|--------
+//         -------------    -------------
 
         default_layer {
             bindings = <
  &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
  &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
  &kp Z       &kp X      &kp C       &kp D      &kp V        &kp M   &kp H      &kp COMMA   &kp DOT    &kp FSLH
-                                    &tdll      &kp SPACE    &kp RET &tdlr
+                        &none       &tdll      &kp SPACE    &kp RET &tdlr      &none
             >;
         };
 
@@ -105,15 +105,15 @@
 // | 1 | 2 | 3 | 4 | 5 |    | = | < | > | y | _ |
 // | 6 | 7 | 8 | 9 | 0 |    | ? | ' | | | & | - |
 // | ` | x | c | = | * |    | % | + | , | " | \ |
-// ------------|TRN|SPC|    |DEL|TRN|-----------|
-//             ---------    ---------
+// --------|TRN|TRN|SPC|    |DEL|TRN|TRN|-------|
+//         -------------    -------------
 
         left_layer {
             bindings = <
  &kp N1    &kp N2 &kp N3 &kp N4    &kp N5      &kp EQUAL &kp LT       &kp GT         &trans        &kp UNDER
  &kp N6    &kp N7 &kp N8 &kp N9    &kp N0      &kp QMARK &mt LGUI SQT &mt LCTRL PIPE &mt LALT AMPS &mt LSHFT MINUS
  &kp GRAVE &trans &trans &kp EQUAL &kp STAR    &kp PRCNT &kp PLUS     &trans         &kp DQT       &kp BSLH
-                         &trans    &trans      &kp DEL   &trans
+                  &trans &trans    &trans      &kp DEL   &trans       &trans
             >;
         };
 
@@ -121,15 +121,15 @@
 // | ! | @ | [ | ] | ^ |    |PUP|BLN|NON|ELN| ; |
 // | ~ | $ | ( | ) | # |    |PDN|LTA|DNA|RTA|UPA|
 // | ` | x | { | } | * |    | m | h | , | . | / |
-// ------------|TRN|BSP|    |RET|TRN|-----------|
-//             ---------    ---------
+// --------|TRN|TRN|BSP|    |RET|TRN|TRN|-------|
+//         -------------    -------------
 
         right_layer {
             bindings = <
  &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET    &kp PG_UP &kp LC(A) &none    &kp LC(E) &trans
  &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH     &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp UP
  &kp GRAVE       &trans        &kp LBRC       &kp RBRC      &kp STAR     &trans    &trans    &trans   &trans    &trans
-                                              &trans        &kp BSPC     &trans    &trans
+                               &trans         &trans        &kp BSPC     &trans    &trans    &trans
             >;
         };
 
@@ -137,15 +137,15 @@
 // |PSG|NSG|VDN|VUP| ^ |    | PP|SUP|MUP|SDN| _ |
 // | ~ |LAL|LCT|LGI| # |    |PDN|MLT|MDN|MRT|RCL|
 // | ` | x |BDN|BUP| * |    | m |LCL| , | . | / |
-// ------------|BLR|MUT|    |BSP|TRN|-----------|
-//             ---------    ---------
+// --------|TRN|BLR|MUT|    |BSP|TRN|TRN|-------|
+//         -------------    -------------
 
         navigation_layer {
             bindings = <
  &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &trans        &kp C_PP &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans
  &trans     &kp LALT   &kp LCTRL    &kp LGUI     &trans        &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp RCLK
  &trans     &trans     &kp C_BRI_DN &kp C_BRI_UP &trans        &trans   &mkp LCLK      &trans         &trans          &trans
-                                    &to BLYR     &kp C_MUTE    &trans   &trans
+                       &trans       &to BLYR     &kp C_MUTE    &trans   &trans         &trans
             >;
         };
 
@@ -153,15 +153,15 @@
 // | q | w | e | r | t |    | y | u | i | o | p |
 // | a | s | d | f | g |    | h | j | k | l | ; |
 // | z | x | c | v | b |    | n | m | , | . | / |
-// ------------|BLR|SPC|    |RET|TRN|-----------|
-//             ---------    ---------
+// --------|TRN|BLR|SPC|    |RET|TRN|TRN|-------|
+//         -------------    -------------
 
         qwerty_layer {
             bindings = <
- &kp Q &kp W &kp E &kp R    &kp T        &kp Y   &kp U &kp I     &kp O   &kp P
- &kp A &kp S &kp D &kp F    &kp G        &kp H   &kp J &kp K     &kp L   &kp SEMI
- &kp Z &kp X &kp C &kp V    &kp B        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH
-                   &to BLYR &kp SPACE    &kp RET &trans
+ &kp Q &kp W &kp E  &kp R    &kp T        &kp Y   &kp U  &kp I     &kp O   &kp P
+ &kp A &kp S &kp D  &kp F    &kp G        &kp H   &kp J  &kp K     &kp L   &kp SEMI
+ &kp Z &kp X &kp C  &kp V    &kp B        &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH
+             &trans &to BLYR &kp SPACE    &kp RET &trans &trans
             >;
         };
 
@@ -169,15 +169,15 @@
 // |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
 // |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
 // |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
-// ------------|BLR|TRN|    |TRN|TRN|-----------|
-//             ---------    ---------
+// --------|TRN|BLR|TRN|    |TRN|TRN|TRN|-------|
+//         -------------    -------------
 
         system_layer {
             bindings = <
  &bootloader &trans &trans &studio_unlock &trans    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
  &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
  &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
-                           &to BLYR       &trans    &trans     &trans
+                    &trans &to BLYR       &trans    &trans     &trans       &trans
             >;
         };
     };

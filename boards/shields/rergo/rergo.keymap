@@ -36,7 +36,7 @@
     //    0    1    2    3    4                 5    6    7    8    9
     //   10   11   12   13   14                15   16   17   18   19
     //   20   21   22   23   24                25   26   27   28   29
-    //                       30    31    32    33
+    //                  30   31    32    33    34   35
 
     keymap {
         compatible = "zmk,keymap";
@@ -46,7 +46,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T        &kp Y   &kp U      &kp I      &kp O      &kp P
             &mt LSFT A &mt LALT S &mt LCTL D &mt LGUI F &kp G        &kp H   &mt RGUI J &mt RCTL K &mt RALT L &mt RSFT SEMI
             &kp Z      &kp X      &kp C      &kp V      &kp B        &kp N   &kp M      &kp CMMA   &kp DOT    &kp FSLH
-                                             &mo 1      &kp SPC      &kp RET &mo 2
+                                  &none      &mo 1      &kp SPC      &kp RET &mo 2      &none
         >;
         };
 
@@ -55,7 +55,7 @@
             &kp EXCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP   &kp LC(A) &kp UP   &kp LC(E) &kp UNDER
             &mt LSFT TILDE &mt LALT DLLR &mt LCTL LPAR &mt LGUI RPAR &kp HASH      &kp PG_DN   &kp LEFT  &kp DOWN &kp RIGHT &mt RSFT DQT
             &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LG(SPC) &kp EQUAL &trans   &trans    &kp PRCNT
-                                                       &to 0         &bootloader   &kp DEL     &trans
+                                         &none         &to 0         &bootloader   &kp DEL     &trans    &none
         >;
         };
 
@@ -64,7 +64,7 @@
             &kp N1      &kp N2    &kp N3      &kp N4      &kp N5        &kp N6    &kp N7       &kp N8        &kp N9        &kp N0
             &kp TAB     &kp LALT  &mt LCTL LT &mt LGUI GT &trans        &kp QMARK &mt RGUI SQT &mt RCTL PIPE &mt RALT AMPS &mt RSFT MINUS
             &trans      &trans    &trans      &kp GRAVE   &trans        &trans    &kp PLUS     &trans        &trans        &kp BSLH
-                                              &to 0       &kp BSPC      &kp ESC   &trans
+                                  &none       &to 0       &kp BSPC      &kp ESC   &trans       &none
         >;
         };
 
