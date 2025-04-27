@@ -99,7 +99,7 @@
  &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
  &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
  &kp Z       &kp X      &kp C       &kp D      &kp V        &kp M   &kp H      &kp COMMA   &kp DOT    &kp FSLH
-                                    &tdll      &kp SPACE    &kp RET &tdlr
+                                    &tdll      &kp SPACE    &kp RET &mo RLYR
             >;
         };
 
