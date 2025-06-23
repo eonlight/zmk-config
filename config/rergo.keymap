@@ -169,8 +169,6 @@
                                     &to BLYR   &kp SPACE    &kp RET   &mo RLYR
             >;
         };
-    };
-};
 
 // ---------------------    ---------------------
 // |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
@@ -188,3 +186,6 @@
                            &to BLYR       &trans    &trans     &trans
             >;
         };
+
+    };
+};
