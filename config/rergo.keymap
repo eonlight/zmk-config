@@ -17,9 +17,8 @@
 #define LLYR 1
 #define RLYR 2
 #define NLYR 3
-#define QLYR 4
+#define GLYR 4
 #define SLYR 5
-#define GLYR 6
 
 / {
 
@@ -79,7 +78,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to QLYR>, <&to SLYR>;
+            bindings = <&mo LLYR>, <&to GLYR>, <&to SLYR>;
         };
     };
 
@@ -94,6 +93,7 @@
 //             ---------    ---------
 
         default_layer {
+            display-name = "Default";
             bindings = <
  &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
  &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
@@ -110,6 +110,7 @@
 //             ---------    ---------
 
         left_layer {
+            display-name = "Left";
             bindings = <
  &kp N1    &kp N2 &kp N3 &kp N4    &kp N5      &kp EQUAL &kp LT       &kp GT         &trans        &kp UNDER
  &kp N6    &kp N7 &kp N8 &kp N9    &kp N0      &kp QMARK &mt LGUI SQT &mt LCTRL PIPE &mt LALT AMPS &mt LSHFT MINUS
@@ -126,6 +127,7 @@
 //             ---------    ---------
 
         right_layer {
+            display-name = "Right";
             bindings = <
  &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET    &kp PG_UP &kp LC(A) &none    &kp LC(E) &trans
  &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH     &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp UP
@@ -142,43 +144,12 @@
 //             ---------    ---------
 
         navigation_layer {
+            display-name = "Navigation";
             bindings = <
  &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &trans        &kp C_PP &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans
  &trans     &kp LALT   &kp LCTRL    &kp LGUI     &trans        &trans   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp RCLK
  &trans     &trans     &kp C_BRI_DN &kp C_BRI_UP &trans        &trans   &mkp LCLK      &trans         &trans          &trans
                                     &to BLYR     &kp C_MUTE    &trans   &trans
-            >;
-        };
-
-// ---------------------    ---------------------
-// | q | w | e | r | t |    | y | u | i | o | p |
-// | a | s | d | f | g |    | h | j | k | l | ; |
-// | z | x | c | v | b |    | n | m | , | . | / |
-// ------------|BLR|SPC|    |RET|TRN|-----------|
-//             ---------    ---------
-
-        qwerty_layer {
-            bindings = <
- &kp Q &kp W &kp E &kp R    &kp T        &kp Y   &kp U &kp I     &kp O   &kp P
- &kp A &kp S &kp D &kp F    &kp G        &kp H   &kp J &kp K     &kp L   &kp SEMI
- &kp Z &kp X &kp C &kp V    &kp B        &kp N   &kp M &kp COMMA &kp DOT &kp FSLH
-                   &to BLYR &kp SPACE    &kp RET &trans
-            >;
-        };
-
-// ---------------------    ---------------------
-// |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
-// |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
-// |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
-// ------------|BLR|TRN|    |TRN|TRN|-----------|
-//             ---------    ---------
-
-        system_layer {
-            bindings = <
- &bootloader &trans &trans &studio_unlock &trans    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
- &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
- &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
-                           &to BLYR       &trans    &to GLYR   &trans
             >;
         };
 
@@ -190,13 +161,30 @@
 //             ---------    ---------
 
         graphite_layer {
+            display-name = "Graphite";
             bindings = <
- &kp B &kp L &kp D &kp W    &kp Z        &kp MINUS &kp F &kp O     &kp U   &kp J
- &kp N &kp R &kp T &kp S    &kp G        &kp Y     &kp H &kp A     &kp E   &kp I
- &kp Q &kp X &kp M &kp C    &kp V        &kp K     &kp P &kp COMMA &kp DOT &kp FSLH
-                   &to BLYR &kp SPACE    &kp RET   &trans
+ &kp B       &kp L      &kp D       &kp W      &kp Z        &kp MINUS &kp F      &kp O       &kp U      &kp J
+ &mt LSHFT N &mt LALT R &mt LCTRL T &mt LGUI S &kp G        &kp Y     &mt LGUI H &mt LCTRL A &mt LALT E &mt LSHFT I
+ &kp Q       &kp X      &kp M       &kp C      &kp V        &kp K     &kp P      &kp COMMA   &kp DOT    &kp FSLH
+                                    &to BLYR   &kp SPACE    &kp RET   &mo RLYR
             >;
         };
-
     };
 };
+
+// ---------------------    ---------------------
+// |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
+// |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
+// |TRN|TRN|TRN|TRN|TRN|    |TRN|TRN|TRN|TRN|TRN|
+// ------------|BLR|TRN|    |TRN|TRN|-----------|
+//             ---------    ---------
+
+        system_layer {
+            display-name = "System";
+            bindings = <
+ &bootloader &trans &trans &studio_unlock &trans    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans
+ &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
+ &trans      &trans &trans &trans         &trans    &trans     &trans       &trans       &trans       &trans
+                           &to BLYR       &trans    &trans     &trans
+            >;
+        };
