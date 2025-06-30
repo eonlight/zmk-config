@@ -17,7 +17,7 @@
 #define LLYR 1
 #define RLYR 2
 #define NLYR 3
-#define GLYR 4
+#define CLYR 4
 #define SLYR 5
 
 / {
@@ -78,7 +78,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to GLYR>, <&to SLYR>;
+            bindings = <&mo LLYR>, <&to CLYR>, <&to SLYR>;
         };
     };
 
@@ -86,18 +86,18 @@
         compatible = "zmk,keymap";
 
 // ---------------------    ---------------------
-// | q | w | f | p | b |    | j | l | u | y | ; |
-// | a | r | s | t | g |    | k | n | e | i | o |
-// | z | x | c | d | v |    | m | h | , | . | / |
-// ------------|TDL|SPC|    |RET|TDR|------------
+// | b | l | d | w | z |    | ' | f | o | u | j |
+// | n | r | t | s | g |    | y | h | a | e | i |
+// | q | x | m | c | v |    | k | p | , | . | / |
+// ------------|BLR|SPC|    |RET|TRN|-----------|
 //             ---------    ---------
 
-        default_layer {
-            display-name = "Default";
+        graphite_layer {
+            display-name = "Graphite";
             bindings = <
- &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
- &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
- &kp Z       &kp X      &kp C       &kp D      &kp V        &kp M   &kp H      &kp COMMA   &kp DOT    &kp FSLH
+ &kp B       &kp L      &kp D       &kp W      &kp Z        &kp SQT &kp F      &kp O       &kp U      &kp J
+ &mt LSHFT N &mt LALT R &mt LCTRL T &mt LGUI S &kp G        &kp Y   &mt LGUI H &mt LCTRL A &mt LALT E &mt LSHFT I
+ &kp Q       &kp X      &kp M       &kp C      &kp V        &kp K   &kp P      &kp COMMA   &kp DOT    &kp FSLH
                                     &tdll      &kp SPACE    &kp RET &mo RLYR
             >;
         };
@@ -105,7 +105,7 @@
 // ---------------------    ---------------------
 // | 1 | 2 | 3 | 4 | 5 |    | = | < | > | y | _ |
 // | 6 | 7 | 8 | 9 | 0 |    | ? | ' | | | & | - |
-// | ` | x | c | = | * |    | % | + | , | " | \ |
+// | ` | x | c | = | + |    | % | * | , | " | \ |
 // ------------|TRN|SPC|    |DEL|TRN|-----------|
 //             ---------    ---------
 
@@ -114,7 +114,7 @@
             bindings = <
  &kp N1    &kp N2 &kp N3 &kp N4    &kp N5      &kp EQUAL &kp LT       &kp GT         &trans        &kp UNDER
  &kp N6    &kp N7 &kp N8 &kp N9    &kp N0      &kp QMARK &mt LGUI SQT &mt LCTRL PIPE &mt LALT AMPS &mt LSHFT MINUS
- &kp GRAVE &trans &trans &kp EQUAL &kp STAR    &kp PRCNT &kp PLUS     &trans         &kp DQT       &kp BSLH
+ &kp GRAVE &trans &trans &kp EQUAL &kp PLUS    &kp PRCNT &kp STAR     &trans         &kp DQT       &kp BSLH
                          &trans    &trans      &kp DEL   &trans
             >;
         };
@@ -122,7 +122,7 @@
 // ---------------------    ---------------------
 // | ! | @ | [ | ] | ^ |    |PUP|BLN|NON|ELN| ; |
 // | ~ | $ | ( | ) | # |    |PDN|LTA|DNA|RTA|UPA|
-// | ` | x | { | } | * |    | m | h | , | . | / |
+// | ` | x | { | } | * |    | m | " | , | . | : |
 // ------------|TRN|BSP|    |RET|TRN|-----------|
 //             ---------    ---------
 
@@ -131,7 +131,7 @@
             bindings = <
  &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET    &kp PG_UP &kp LC(A) &none    &kp LC(E) &trans
  &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH     &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &kp GRAVE       &trans        &kp LBRC       &kp RBRC      &kp STAR     &trans    &trans    &trans   &trans    &trans
+ &kp GRAVE       &trans        &kp LBRC       &kp RBRC      &kp STAR     &trans    &kp DQT   &trans   &trans    &kp COLON
                                               &trans        &kp BSPC     &trans    &trans
             >;
         };
@@ -153,22 +153,24 @@
             >;
         };
 
+
 // ---------------------    ---------------------
-// | b | l | d | w | z |    | - | f | o | u | j |
-// | n | r | t | s | g |    | y | h | a | e | i |
-// | q | x | m | c | v |    | k | p | , | . | / |
-// ------------|BLR|SPC|    |RET|TRN|-----------|
+// | q | w | f | p | b |    | j | l | u | y | ; |
+// | a | r | s | t | g |    | k | n | e | i | o |
+// | z | x | c | d | v |    | m | h | , | . | / |
+// ------------|TDL|SPC|    |RET|TDR|------------
 //             ---------    ---------
 
-        graphite_layer {
-            display-name = "Graphite";
+        colemak_layer {
+            display-name = "Colemak";
             bindings = <
- &kp B       &kp L      &kp D       &kp W      &kp Z        &kp MINUS &kp F      &kp O       &kp U      &kp J
- &mt LSHFT N &mt LALT R &mt LCTRL T &mt LGUI S &kp G        &kp Y     &mt LGUI H &mt LCTRL A &mt LALT E &mt LSHFT I
- &kp Q       &kp X      &kp M       &kp C      &kp V        &kp K     &kp P      &kp COMMA   &kp DOT    &kp FSLH
-                                    &to BLYR   &kp SPACE    &kp RET   &mo RLYR
+ &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
+ &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
+ &kp Z       &kp X      &kp C       &kp D      &kp V        &kp M   &kp H      &kp COMMA   &kp DOT    &kp FSLH
+                                    &to BLYR   &kp SPACE    &kp RET &mo RLYR
             >;
         };
+
 
 // ---------------------    ---------------------
 // |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
