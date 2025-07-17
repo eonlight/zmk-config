@@ -122,16 +122,16 @@
 // ---------------------    ---------------------
 // | ! | @ | [ | ] | ^ |    |PUP|BLN|NON|ELN| ; |
 // | ~ | $ | ( | ) | # |    |PDN|LTA|DNA|RTA|UPA|
-// | ` | x | { | } | * |    | m | " | , | . | : |
+// | ` | x | { | } | + |    | m | " | , | . | : |
 // ------------|TRN|BSP|    |RET|TRN|-----------|
 //             ---------    ---------
 
         right_layer {
             display-name = "Right";
             bindings = <
- &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET    &kp PG_UP &kp LC(A) &none    &kp LC(E) &trans
+ &kp EXCL        &kp AT        &kp LBKT       &kp RBKT      &kp CARET    &kp PG_UP &kp LC(A) &none    &kp LC(E) &kp SEMI
  &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH     &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &kp GRAVE       &trans        &kp LBRC       &kp RBRC      &kp STAR     &trans    &kp DQT   &trans   &trans    &kp COLON
+ &kp GRAVE       &trans        &kp LBRC       &kp RBRC      &kp PLUS     &trans    &kp DQT   &trans   &trans    &kp COLON
                                               &trans        &kp BSPC     &trans    &trans
             >;
         };
