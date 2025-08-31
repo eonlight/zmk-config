@@ -17,7 +17,7 @@
 #define LLYR 1
 #define RLYR 2
 #define NLYR 3
-#define CLYR 4
+#define QLYR 4
 #define SLYR 5
 
 / {
@@ -74,11 +74,11 @@
     };
 
     behaviors {
-        tdll: tap_dance_layer_lest {
+        tdll: tap_dance_layer_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LLYR>, <&to CLYR>, <&to SLYR>;
+            bindings = <&mo LLYR>, <&to QLYR>, <&to SLYR>;
         };
     };
 
@@ -153,24 +153,21 @@
             >;
         };
 
-
 // ---------------------    ---------------------
-// | q | w | f | p | b |    | j | l | u | y | ; |
-// | a | r | s | t | g |    | k | n | e | i | o |
-// | z | x | c | d | v |    | m | h | , | . | / |
-// ------------|TDL|SPC|    |RET|TDR|------------
+// | q | w | e | r | t |    | y | u | i | o | p |
+// | a | s | d | f | g |    | h | j | k | l | ; |
+// | z | x | c | v | b |    | n | m | , | . | / |
+// ------------|BLR|SPC|    |RET|TRN|-----------|
 //             ---------    ---------
-
-        colemak_layer {
-            display-name = "Colemak";
+        qwerty_layer {
+            display-name = "Qwerty";
             bindings = <
- &kp Q       &kp W      &kp F       &kp P      &kp B        &kp J   &kp L      &kp U       &kp Y      &kp SEMI
- &mt LSHFT A &mt LALT R &mt LCTRL S &mt LGUI T &kp G        &kp K   &mt LGUI N &mt LCTRL E &mt LALT I &mt LSHFT O
- &kp Z       &kp X      &kp C       &kp D      &kp V        &kp M   &kp H      &kp COMMA   &kp DOT    &kp FSLH
+ &kp Q       &kp W      &kp E       &kp R      &kp T        &kp Y   &kp U      &kp I       &kp O      &kp P
+ &mt LSHFT A &mt LALT S &mt LCTRL D &mt LGUI F &kp G        &kp H   &mt LGUI J &mt LCTRL K &mt LALT L &mt LSHFT SEMI
+ &kp Z       &kp X      &kp C       &kp V      &kp B        &kp N   &kp M      &kp COMMA   &kp DOT    &kp FSLH
                                     &to BLYR   &kp SPACE    &kp RET &mo RLYR
             >;
         };
-
 
 // ---------------------    ---------------------
 // |BTL|TRN|TRN|SUL|TRN|    |BCL|BT0|BT1|BT2|TRN|
