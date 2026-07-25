@@ -1,7 +1,7 @@
 if SHIELD_RERGO_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "rergo v3"
+    default "rergo v4"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
