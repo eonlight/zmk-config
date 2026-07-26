@@ -1,0 +1,26 @@
+# ZMK / Zephyr build output
+build/
+firmware/
+*.uf2
+
+# west workspace metadata
+.west/
+
+# west-fetched dependencies (populated by `west update`)
+/zmk/
+/modules/
+/optional/
+
+# Zephyr upstream checkout fetched by west.
+# Keep this repo's own zephyr/module.yml (tracked) but ignore everything else.
+/zephyr/*
+!/zephyr/module.yml
+
+# ZMK local cache
+.zmk/
+
+# Python virtualenv
+.venv/
+
+# macOS
+.DS_Store

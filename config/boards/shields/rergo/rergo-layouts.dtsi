@@ -1,9 +1,11 @@
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
 / {
     physical_layout_rergo: physical_layout_rergo {
         compatible = "zmk,physical-layout";
         display-name = "Default";
+        transform = <&default_transform>;
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>
             , <&key_physical_attrs 100 100  100    0       0   100     0>
