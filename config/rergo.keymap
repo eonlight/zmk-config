@@ -57,7 +57,7 @@
             &kp EXCL       &kp AT        &kp LBKT      &kp RBKT      &kp CARET     &kp PG_UP   &kp LC(A) &kp UP   &kp LC(E) &kp UNDER
             &mt LSFT TILDE &mt LALT DLLR &mt LCTL LPAR &mt LGUI RPAR &kp HASH      &kp PG_DN   &kp LEFT  &kp DOWN &kp RIGHT &mt RSFT DQT
             &trans         &trans        &kp LBRC      &kp RBRC      &kp STAR      &kp LG(SPC) &kp EQUAL &trans   &trans    &kp PRCNT
-                           &none         &none         &to 0         &bootloader   &kp DEL     &trans    &none
+                           &none         &to 0         &bootloader   &kp DEL     &trans    &none
         >;
         };
 
