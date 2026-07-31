@@ -84,11 +84,6 @@
         label = "KSCAN";
         wakeup-source;
         diode-direction = "col2row";
-        // Chatter fix: a bouncing contact was read as release+repress, printing
-        // the character twice. Release debounce filters that; keeping press at
-        // the 5ms default avoids adding latency to the keystroke itself.
-        debounce-press-ms = <5>;
-        debounce-release-ms = <15>;
         row-gpios
             = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    //Row0
             , <&pro_micro 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>    //Row1
