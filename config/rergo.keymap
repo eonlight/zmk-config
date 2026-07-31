@@ -143,7 +143,7 @@
 // Symbols on the right hand, navigation on the left hand.
 // ---------------------    ---------------------
 // | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |
-// |TRN|HOM|TRN|END|PUP|    | = | < | > | _ | - |
+// |TRN|HOM|TRN|END|PUP|    | = | < | > | y | _ |
 // |UP |LFT|DWN|RGT|PDN|    | ? | ' | | | & | - |
 // | ` |TRN|TRN| = | + |    | % | * |TRN| " | \ |
 // --------|TRN|TRN|TRN|    |XXX|DEL|TRN|--------
@@ -153,7 +153,7 @@
             display-name = "Left";
             bindings = <
  &kp EXCL  &kp AT    &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET &kp AMPS     &kp STAR       &kp LPAR      &kp RPAR
- &trans    &kp HOME  &trans    &kp END    &kp PG_UP    &kp EQUAL &kp LT       &kp GT         &kp UNDER     &kp MINUS
+ &trans    &kp HOME  &trans    &kp END    &kp PG_UP    &kp EQUAL &kp LT       &kp GT         &trans     &kp UNDER
  &kp UP    &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN    &kp QMARK &hmr LGUI SQT &hmr LCTRL PIPE &hmr LALT AMPS &hmr LSHFT MINUS
  &kp GRAVE &trans    &trans    &kp EQUAL  &kp PLUS     &kp PRCNT &kp STAR     &trans         &kp DQT       &kp BSLH
                      &trans    &trans     &trans       &none     &kp DEL      &trans
