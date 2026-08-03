@@ -58,7 +58,6 @@
 
     default_transform: keymap_transform_rergo {
         compatible = "zmk,matrix-transform";
-        //columns = <10>;
         columns = <16>;
         rows = <5>;
 
