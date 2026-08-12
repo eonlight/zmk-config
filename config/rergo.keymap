@@ -14,10 +14,10 @@
 
 // layers
 #define BLYR 0
-#define LLYR 1
-#define RLYR 2
-#define NLYR 3
-#define GLYR 4
+#define GLYR 1
+#define LLYR 2
+#define RLYR 3
+#define NLYR 4
 #define SLYR 5
 
 / {
@@ -101,11 +101,30 @@
         graphite_layer {
             display-name = "Graphite";
             bindings = <
- &kp N1       &kp N2      &kp N3       &kp N4      &kp N5       &kp N6  &kp N7      &kp N8       &kp N9      &kp N0
- &kp B        &kp L       &kp D        &kp W       &kp Z        &kp SQT &kp F       &kp O        &kp U       &kp J
- &mt LSHFT N &mt LALT R &mt LCTRL T &mt LGUI S &kp G        &kp Y   &mt LGUI H &mt LCTRL A &mt LALT E &mt LSHFT I
- &kp Q        &kp X       &kp M        &kp C       &kp V        &kp K   &kp P       &kp COMMA    &kp DOT     &kp FSLH
-                          &tdll        &kp SPACE   &lt NLYR BSPC    &kp DEL &kp RET     &mo RLYR
+ &kp N1       &kp N2      &kp N3       &kp N4      &kp N5        &kp N6  &kp N7      &kp N8       &kp N9      &kp N0
+ &kp B        &kp L       &kp D        &kp W       &kp Z         &kp SQT &kp F       &kp O        &kp U       &kp J
+ &mt LSHFT N  &mt LALT R  &mt LCTRL T  &mt LGUI S  &kp G         &kp Y   &mt LGUI H  &mt LCTRL A  &mt LALT E  &mt LSHFT I
+ &kp Q        &kp X       &kp M        &kp C       &kp V         &kp K   &kp P       &kp COMMA    &kp DOT     &kp FSLH
+                          &tdll        &kp SPACE   &lt NLYR BSPC &kp DEL &kp RET     &mo RLYR
+            >;
+        };
+
+// ---------------------    ---------------------
+// |ESC| 1 | 2 | 3 | 4 |    | 5 | 6 | 7 | 8 | 9 |
+// |TAB| q | w | e | r |    | t | y | u | i | o |
+// |SFT| a | s | d | f |    | g | h | j | k | l |
+// |CTL| z | x | c | v |    | b | n | m | , | . |
+// --------|TLR|SPC|BLR|    |XXX|RET|RLY|--------
+//         -------------    -------------
+
+        game_layer {
+            display-name = "Game";
+            bindings = <
+ &kp ESC   &kp N1 &kp N2   &kp N3    &kp N4     &kp N5   &kp N6     &kp N7      &kp N8     &kp N9
+ &kp TAB   &kp Q  &kp W    &kp E     &kp R      &kp T    &kp Y      &kp U       &kp I      &kp O
+ &kp LSHFT &kp A  &kp S    &kp D     &kp F      &kp G    &mt LGUI H &mt LCTRL J &mt LALT K &mt LSHFT L
+ &kp LCTRL &kp Z  &kp X    &kp C     &kp V      &kp B    &kp N      &kp M       &kp COMMA  &kp DOT
+                  &mo LLYR &kp SPACE &kp TAB    &to BLYR &kp RET    &to BLYR
             >;
         };
 
@@ -122,7 +141,7 @@
             display-name = "Left";
             bindings = <
  &kp EXCL  &kp AT    &kp HASH  &kp DLLR   &kp PRCNT    &kp CARET &kp AMPS     &kp STAR       &kp LPAR      &kp RPAR
- &trans    &kp HOME  &trans    &kp END    &kp PG_UP    &kp EQUAL &kp LT       &kp GT         &trans     &kp UNDER
+ &trans    &kp HOME  &trans    &kp END    &kp PG_UP    &kp EQUAL &kp LT       &kp GT         &trans        &kp UNDER
  &kp UP    &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN    &kp QMARK &mt LGUI SQT &mt LCTRL PIPE &mt LALT AMPS &mt LSHFT MINUS
  &kp GRAVE &trans    &trans    &kp EQUAL  &kp PLUS     &kp PRCNT &kp STAR     &trans         &kp DQT       &kp BSLH
                      &trans    &trans     &trans       &none     &kp DEL      &trans
@@ -144,8 +163,8 @@
  &kp EXCL        &kp AT        &kp HASH       &kp DLLR      &kp PRCNT    &kp CARET &kp AMPS  &kp STAR &kp LPAR  &kp RPAR
  &kp LT          &kp GT        &kp LBKT       &kp RBKT      &kp PIPE     &kp PG_UP &kp LC(A) &none    &kp LC(E) &kp SEMI
  &mt LSHFT TILDE &mt LALT DLLR &mt LCTRL LPAR &mt LGUI RPAR &kp HASH     &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp UP
- &kp GRAVE       &kp MINUS     &kp LBRC       &kp RBRC      &kp PLUS     &trans    &kp DQT  &trans   &trans    &kp COLON
-                               &trans         &kp BSPC      &trans       &none     &trans   &trans
+ &kp GRAVE       &kp MINUS     &kp LBRC       &kp RBRC      &kp PLUS     &trans    &kp DQT   &trans   &trans    &kp COLON
+                               &trans         &kp BSPC      &trans       &none     &trans    &trans
             >;
         };
 
@@ -162,30 +181,11 @@
         navigation_layer {
             display-name = "Navigation";
             bindings = <
- &kp EXCL   &kp AT         &kp HASH       &kp DLLR        &kp PRCNT     &kp CARET  &kp AMPS     &kp STAR       &kp LPAR      &kp RPAR
- &trans     &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans        &kp C_PREV &kp C_NEXT   &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PP
- &mkp LCLK  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans        &trans     &kp LALT     &kp LCTRL      &kp LGUI      &trans
- &trans     &trans         &trans         &mkp RCLK       &trans        &trans     &trans       &kp C_BRI_DN   &kp C_BRI_UP  &trans
-                           &to BLYR       &kp C_MUTE      &trans        &none      &trans       &trans
-            >;
-        };
-
-// ---------------------    ---------------------
-// |ESC| 1 | 2 | 3 | 4 |    | 5 | 6 | 7 | 8 | 9 |
-// |TAB| q | w | e | r |    | t | y | u | i | o |
-// |SFT| a | s | d | f |    | g | h | j | k | l |
-// |CTL| z | x | c | v |    | b | n | m | , | . |
-// --------|TLR|SPC|BLR|    |XXX|RET|RLY|--------
-//         -------------    -------------
-
-        game_layer {
-            display-name = "Game";
-            bindings = <
- &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4         &kp N5  &kp N6     &kp N7      &kp N8     &kp N9
- &kp TAB   &kp Q  &kp W  &kp E    &kp R          &kp T   &kp Y      &kp U       &kp I      &kp O
- &kp LSHFT &kp A  &kp S  &kp D    &kp F          &kp G   &mt LGUI H &mt LCTRL J &mt LALT K &mt LSHFT L
- &kp LCTRL &kp Z  &kp X  &kp C    &kp V          &kp B   &kp N      &kp M       &kp COMMA  &kp DOT
-                  &mo LLYR &kp SPACE &to BLYR    &none   &kp RET    &to BLYR
+ &kp EXCL   &kp AT         &kp HASH       &kp DLLR        &kp PRCNT    &kp CARET &kp AMPS        &kp STAR           &kp LPAR          &kp RPAR
+ &trans     &msc SCRL_UP   &mmv MOVE_UP   &msc SCRL_DOWN  &trans       &trans    &kp C_PP        &trans             &trans            &trans
+ &mkp LCLK  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans       &trans    &mt LGUI C_PREV &mt LCTRL C_NEXT   &mt LALT C_VOL_DN &mt LSHFT C_VOL_UP
+ &trans     &trans         &trans         &mkp RCLK       &trans       &trans    &kp C_MUTE      &kp C_BRI_DN       &kp C_BRI_UP      &trans
+                           &to BLYR       &trans          &trans       &trans    &trans          &trans
             >;
         };
 
